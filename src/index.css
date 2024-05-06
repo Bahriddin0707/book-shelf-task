@@ -1,13 +1,342 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url("https://fonts.googleapis.com/css2?family=Inter&family=Poppins:ital,wght@0,400;1,300&display=swap");
+
+:root {
+  --primary: blue;
+  --error: #e7195a;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  background: #f1f1f1;
+  margin: 0;
+  font-family: "Poppins";
+}
+
+header {
+  background: #fff;
+}
+
+header .container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header a {
+  color: #333;
+  text-decoration: none;
+}
+
+header a span {
+  color: var(--primary);
+}
+/* SIGN_UP AND LOG_IN STYLE*/
+
+nav {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+}
+
+.nav-links {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+}
+
+.search-book {
+  width: 190px;
+}
+
+.search-book input {
+  width: 100%;
+  padding: 8px 10px;
+  font-size: 13px;
+}
+
+nav button {
+  background: #fff;
+  color: var(--primary);
+  border: 2px solid var(--primary);
+  padding: 6px 10px;
+  border-radius: 4px;
+  font-family: "Poppins";
+  cursor: pointer;
+  font-size: 1em;
+}
+
+form {
+  width: 400px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 5px;
+}
+
+.signup input {
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  width: 100%;
+  height: 38px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+.signup button {
+  display: block;
+  width: 100%;
+  background: var(--primary);
+  border: 0;
+  color: #fff;
+  padding: 10px;
+  font-family: "Poppins";
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.signup .error,
+.login .error {
+  color: var(--error);
+  margin-bottom: 15px;
+}
+
+div.account {
+  margin-top: 20px;
+}
+div.account a {
+  text-decoration: none;
+  color: var(--primary);
+}
+
+.login input {
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  width: 100%;
+  height: 45px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.login button {
+  display: block;
+  width: 100%;
+  background: var(--primary);
+  border: 0;
+  color: #fff;
+  padding: 10px;
+  font-family: "Poppins";
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* PAGES STYLE*/
+.pages {
+  max-width: 1400px;
+  padding: 20px;
+  margin: 0 auto;
+}
+
+/* home page*/
+.home {
+  display: flex;
+  flex-direction: column;
+}
+
+.books {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  row-gap: 15px;
+  column-gap: 30px;
+}
+
+.books-overview {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.books-overview span {
+  color: var(--primary);
+}
+
+.books-overview a {
+  text-decoration: none;
+  background: var(--primary);
+  color: #fff;
+  padding: 8px 11px;
+  border-radius: 5px;
+}
+
+.book-details {
+  background: #fff;
+  border-radius: 4px;
+  margin: 20px auto;
+  padding: 20px;
+  position: relative;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.book-details h4 {
+  font-size: 1.2em;
+  color: var(--primary);
+}
+
+.book-details p {
+  margin: 0;
+  font-size: 1em;
+  color: #555;
+}
+
+.book-details span.delete-btn,
+.edit-btn {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  cursor: pointer;
+  background: #f1f1f1;
+  border-radius: 10px;
+  color: #333;
+}
+
+.book-details span.delete-btn {
+  top: 20px;
+  right: 20px;
+}
+
+.book-details .edit-btn {
+  top: 67px;
+  right: 20px;
+}
+
+.book-details i.time-to-now {
+  color: blueviolet;
+  display: inline-block;
+  margin-left: 10px;
+}
+
+/* Book Form*/
+
+form.book-form {
+  position: relative;
+  width: 300px;
+  padding: 22px;
+}
+
+form.book-form h3 {
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.book-form input {
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  width: 100%;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.book-form-btns {
+  display: flex;
+  justify-content: space-between;
+}
+
+.book-form button {
+  width: 140px;
+  display: block;
+  text-align: center;
+  box-sizing: border-box;
+  background: var(--primary);
+  border: 0;
+  color: #fff;
+  padding: 10px;
+  font-family: "Poppins";
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.close-btn {
+  width: 140px;
+  display: block;
+  text-align: center;
+  box-sizing: border-box;
+  text-decoration: none;
+  background-color: var(--primary);
+  color: #fff;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+form.book-form > a {
+  position: absolute;
+  text-decoration: none;
+  width: 45px;
+  height: 45px;
+  top: 20px;
+  right: 6px;
+}
+
+form.book-form > a svg {
+  width: 35px;
+  height: 35px;
+}
+
+.book-form div.error {
+  padding: 10px;
+  background: #ffefef;
+  border: 1px solid var(--error);
+  color: var(--error);
+  border-radius: 4px;
+  margin: 20px;
+}
+
+.book-form input.error {
+  border: 1px solid var(--error);
+}
+
+/* Responsive Design */
+@media (max-width: 1000px) {
+  header .container {
+    margin: 0 auto;
+    padding: 10px 20px;
+
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+  }
+}
+
+@media (max-width: 720px) {
+  header .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    row-gap: 20px;
+    padding-bottom: 30px;
+  }
+
+  header .container a {
+    order: 1;
+  }
+
+  header .search-book {
+    order: 3;
+  }
+
+  header nav {
+    order: 2;
+  }
 }
